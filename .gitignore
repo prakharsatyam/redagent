@@ -1,0 +1,72 @@
+# ==========================================
+# RedAgent .gitignore
+# Prevents exposure of secrets, datasets, and model weights
+# ==========================================
+
+# 1. API Keys & Secrets
+keys.env
+.env
+.env.*
+*.env
+*.key
+*.pem
+*.secret
+jetski-standalone-oauth-token
+
+# 2. Datasets & Trade Data
+data/raw/*
+data/processed/*
+data/cache/*
+data/*.parquet
+data/*.csv
+data/*.jsonl
+data/paper_portfolio.json
+data/sync_manifest.json
+!data/.gitkeep
+
+# 3. Model Weights & Training Checkpoints
+models/*
+!models/.gitkeep
+*.pt
+*.pth
+*.bin
+*.onnx
+*.safetensors
+*.ckpt
+checkpoint-*/
+laya_options_agent/
+
+# 4. Logs & Process IDs
+*.log
+*.pid
+logs/
+
+# 5. Python & Virtual Environment
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# 6. Colab & Drive Sync Scratch
+drive_workspace/
+.ipynb_checkpoints/
+
+# 7. Operating System & IDE
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+.vscode/
+.idea/
